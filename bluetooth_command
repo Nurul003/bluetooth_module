@@ -1,0 +1,51 @@
+#To discover available device and theri positions.
+$	hcitool scan
+
+#To pair the device
+$	sudo rfcomm bind device_number device_mac_address channel_number
+
+#To remove bluetooth devices
+$	bluetoothctl
+$	remove device_mac_address
+or 
+$	bluetoothctl remove device_mac_address
+
+
+
+
+
+##python using serial package to see paired device
+
+from serial.tools import list_ports
+
+x = list(list_ports.comports())
+print(x)
+
+or
+
+import serial.tools.list_ports
+
+plist = list(serial.tools.list_ports.comports())
+print(plist)
+
+
+##https://makersportal.com/blog/2018/2/25/python-datalogger-reading-the-serial-output-from-arduino-to-analyze-data-using-pyserial
+
+
+## To list availabe serial ports 
+
+import serial.tools.list_ports
+a=serial.tools.list_ports.comports()
+print(a)
+
+or 
+
+python3 -m serial.tools.list_ports
+
+
+bluetooth module connection and data sending video: https://www.youtube.com/watch?v=3tcn496oxnk&list=PLEKKh7ssoVZxbm4Dgu-v-LKG9TobkgJSX&index=22&t=0s
+
+
+bluetooth module connection and data sending git-hub: https://github.com/LessonStudio/Arduino_Bluetooth
+
+
